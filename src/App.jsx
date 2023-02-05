@@ -1,12 +1,12 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
 
 function App() {
   const type = "movie";
   const url = `https://api.themoviedb.org/3/trending/${type}/week?api_key=c01632f2b132d2f36f9a3d5c41629f1b&region=US&language=en-US&page=1`;
 
-  const [data, setData] = React.useState();
-  const [loading, setLoading] = React.useState(true);
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
   const imageUrl = "https://image.tmdb.org/t/p/w500";
   const fetchData = () => {
     axios.get(url).then(({ data }) => {
@@ -18,6 +18,7 @@ function App() {
   React.useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <>
       {loading && loading}
