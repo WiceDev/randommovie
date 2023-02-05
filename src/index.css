@@ -1,0 +1,9 @@
+@import "https://rsms.me/inter/inter.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background: #000;
+  font-family: "Inter";
+  overflow: hidden;
+}
